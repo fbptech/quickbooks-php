@@ -70,6 +70,8 @@ class QuickBooks_QBXML_Schema_Object_VendorAddRq extends QuickBooks_QBXML_Schema
   'OpenBalanceDate' => 'DATETYPE',
   'BillingRateRef ListID' => 'IDTYPE',
   'BillingRateRef FullName' => 'STRTYPE',
+  'CurrencyRef ListID' => 'IDTYPE',
+  'CurrencyRef FullName' => 'STRTYPE',
   'IncludeRetElement' => 'STRTYPE',
 );
 		
@@ -119,6 +121,8 @@ class QuickBooks_QBXML_Schema_Object_VendorAddRq extends QuickBooks_QBXML_Schema
   'OpenBalanceDate' => 0,
   'BillingRateRef ListID' => 0,
   'BillingRateRef FullName' => 159,
+  'CurrencyRef ListID' => 0,
+  'CurrencyRef FullName' => 159,
   'IncludeRetElement' => 50,
 );
 		
@@ -215,6 +219,8 @@ class QuickBooks_QBXML_Schema_Object_VendorAddRq extends QuickBooks_QBXML_Schema
   'OpenBalanceDate' => 999.99,
   'BillingRateRef ListID' => 999.99,
   'BillingRateRef FullName' => 999.99,
+  'CurrencyRef ListID' => 8,
+  'CurrencyRef FullName' => 8,
   'IncludeRetElement' => 4,
 );
 		
@@ -264,6 +270,8 @@ class QuickBooks_QBXML_Schema_Object_VendorAddRq extends QuickBooks_QBXML_Schema
   'OpenBalanceDate' => false,
   'BillingRateRef ListID' => false,
   'BillingRateRef FullName' => false,
+  'CurrencyRef ListID' => false,
+  'CurrencyRef FullName' => false,
   'IncludeRetElement' => true,
 );
 			
@@ -325,7 +333,9 @@ class QuickBooks_QBXML_Schema_Object_VendorAddRq extends QuickBooks_QBXML_Schema
   37 => 'OpenBalanceDate',
   38 => 'BillingRateRef ListID',
   39 => 'BillingRateRef FullName',
-  40 => 'IncludeRetElement',
+  40 => 'CurrencyRef ListID',
+  41 => 'CurrencyRef FullName',
+  42 => 'IncludeRetElement',
 );
 			
 		return $paths;

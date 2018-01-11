@@ -208,7 +208,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the alternate phone number for this customer
+	 * Set the alternate phone number for this vendor
 	 * 
 	 * @param string $phone
 	 * @return boolean
@@ -224,7 +224,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Set the fax number for this customer
+	 * Set the fax number for this vendor
 	 * 
 	 * @param string $fax
 	 * @return boolean 
@@ -240,7 +240,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Set the e-mail address for this customer
+	 * Set the e-mail address for this vendor
 	 * 
 	 * @param string $email
 	 * @return boolean
@@ -256,7 +256,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the contact person for this customer
+	 * Set the contact person for this vendor
 	 * 
 	 * @param string $contact
 	 * @return boolean
@@ -272,7 +272,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the alternate contact for this customer
+	 * Set the alternate contact for this vendor
 	 * 
 	 * @param string $contact
 	 * @return boolean
@@ -288,14 +288,14 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the salutation for this customer
+	 * Set the salutation for this vendor
 	 * 
-	 * @param string $salut
+	 * @param string $strSalutation
 	 * @return boolean
 	 */
-	public function setSalutation($salut)
+	public function setSalutation($strSalutation)
 	{
-		return $this->set('Salutation', $salut);
+		return $this->set('Salutation', $strSalutation);
 	}
 	
 	/**
@@ -306,6 +306,14 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	public function getSalutation()
 	{
 		return $this->get('Salutation');
+	}
+
+	public function setCurrencyRefListID($strCurrencyListID) {
+		return $this->set('CurrencyRef ListID', $strCurrencyListID);
+	}
+
+	public function getCurrencyRefListID() {
+		return $this->get('CurrencyRef ListID');
 	}
 	
 	/**
@@ -335,7 +343,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	/**
 	 * Convert this object to a valid qbXML request
 	 * 
-	 * @param string $request					The type of request to convert this to (examples: CustomerAddRq, CustomerModRq, CustomerQueryRq)
+	 * @param string $request					The type of request to convert this to (examples: VendorAddRq, VendorModRq, VendorQueryRq)
 	 * @param boolean $todo_for_empty_elements	A constant, one of: QUICKBOOKS_XML_XML_COMPRESS, QUICKBOOKS_XML_XML_DROP, QUICKBOOKS_XML_XML_PRESERVE
 	 * @param string $indent
 	 * @param string $root
