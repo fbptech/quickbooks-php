@@ -42,7 +42,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Set the customer ListID
+	 * Set the vendor ListID
 	 * 
 	 * @param string $ListID
 	 * @return boolean
@@ -53,7 +53,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the customer ApplicationID (auto-replaced by the API with a ListID)
+	 * Set the vendor ApplicationID (auto-replaced by the API with a ListID)
 	 * 
 	 * @param mixed $value
 	 * @return boolean
@@ -64,7 +64,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the customer name
+	 * Set the vendor name
 	 * 
 	 * @param string $name
 	 * @return boolean
@@ -75,7 +75,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Get the customer ListID
+	 * Get the vendor ListID
 	 * 
 	 * @return string
 	 */
@@ -108,7 +108,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Get the TxnDate for the JournalEntry
+	 * Get the TxnDate for the Bill
 	 * 
 	 * @param ? $format = null
 	 * @return string
@@ -119,7 +119,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * @see QuickBooks_Object_JournalEntry::setTxnDate()
+	 * @see QuickBooks_Object_Bill::setTxnDate()
 	 */
 	public function setTransactionDate($date)
 	{
@@ -127,7 +127,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * @see QuickBooks_Object_JournalEntry::getTxnDate()
+	 * @see QuickBooks_Object_Bill::getTxnDate()
 	 */
 	public function getTransactionDate($format = null)
 	{
@@ -146,7 +146,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the RefNumber for the JournalEntry
+	 * Set the RefNumber for the Bill
 	 * 
 	 * @param string $value
 	 * @return boolean
@@ -157,7 +157,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Get the RefNumber for the JournalEntry
+	 * Get the RefNumber for the Bill
 	 * 
 	 * @return string
 	 */
@@ -169,7 +169,7 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	// Path: Memo, datatype: STRTYPE
 	
 	/**
-	 * Set the Memo for the JournalEntry
+	 * Set the Memo for the Bill
 	 * 
 	 * @param string $value
 	 * @return boolean
@@ -180,13 +180,21 @@ class QuickBooks_QBXML_Object_Bill extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Get the Memo for the JournalEntry
+	 * Get the Memo for the Bill
 	 * 
 	 * @return string
 	 */
 	public function getMemo()
 	{
 		return $this->get('Memo');
+	}
+
+	public function setExchangeRate($dblExchangeRate) {
+		return $this->set('ExchangeRate', $dblExchangeRate);
+	}
+
+	public function getExchangeRate() {
+		return $this->get('ExchangeRate');
 	}
 	
 	public function addExpenseLine($obj)
