@@ -1029,7 +1029,7 @@ class QuickBooks_IPP
 		if ($optype == QuickBooks_IPP_IDS::OPTYPE_ADD or $optype == QuickBooks_IPP_IDS::OPTYPE_MOD)
 		{
 			$post = true;
-			$url = $this->baseURL() . '/company/' . $realm . '/' . strtolower($resource) . '?requestid=' . $guid . '&minorversion=6';
+			$url = $this->baseURL() . '/company/' . $realm . '/' . strtolower($resource) . '?requestid=' . $guid . '&minorversion=6&include=allowduplicatedocnum';
 			$xml = $xml_or_query;
 		}
 		else if ($optype == QuickBooks_IPP_IDS::OPTYPE_QUERY)
