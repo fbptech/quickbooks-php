@@ -208,7 +208,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the alternate phone number for this vendor
+	 * Set the alternate phone number for this customer
 	 * 
 	 * @param string $phone
 	 * @return boolean
@@ -224,7 +224,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Set the fax number for this vendor
+	 * Set the fax number for this customer
 	 * 
 	 * @param string $fax
 	 * @return boolean 
@@ -240,7 +240,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 
 	/**
-	 * Set the e-mail address for this vendor
+	 * Set the e-mail address for this customer
 	 * 
 	 * @param string $email
 	 * @return boolean
@@ -256,7 +256,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the contact person for this vendor
+	 * Set the contact person for this customer
 	 * 
 	 * @param string $contact
 	 * @return boolean
@@ -272,7 +272,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the alternate contact for this vendor
+	 * Set the alternate contact for this customer
 	 * 
 	 * @param string $contact
 	 * @return boolean
@@ -288,14 +288,14 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	}
 	
 	/**
-	 * Set the salutation for this vendor
+	 * Set the salutation for this customer
 	 * 
-	 * @param string $strSalutation
+	 * @param string $salut
 	 * @return boolean
 	 */
-	public function setSalutation($strSalutation)
+	public function setSalutation($salut)
 	{
-		return $this->set('Salutation', $strSalutation);
+		return $this->set('Salutation', $salut);
 	}
 	
 	/**
@@ -315,6 +315,48 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	public function getCurrencyRefListID() {
 		return $this->get('CurrencyRef ListID');
 	}
+
+    	/**
+  	 * 
+  	 * 
+  	 * @return string
+  	 */
+  	public function getNameOnCheck()
+  	{
+  		return $this->get('NameOnCheck');
+  	}
+  
+  	/**
+  	 * Set the payee name for this vendor
+  	 *
+  	 * @param string $name
+  	 * @return boolean
+  	 */
+  	public function setNameOnCheck($name)
+  	{
+  		return $this->set('NameOnCheck', $name);
+  	}
+  
+      	/**
+    	 * Set the VendorTypeRef FullName for the vendor
+    	 *
+    	 * @param string $type
+    	 * @return boolean
+    	 */
+    	public function setVendorTypeRef($type)
+    	{
+    		return $this->set('VendorTypeRef FullName', $type);
+    	}
+  
+    	/**
+    	 * Get the VendorTypeRef FullName for the vendor
+    	 *
+    	 * @return string
+    	 */
+    	public function getVendorTypeRef()
+    	{
+    		return $this->get('VendorTypeRef FullName');
+    	}
 	
 	/**
 	 * Perform any needed clean-up of the object data members
@@ -343,7 +385,7 @@ class QuickBooks_QBXML_Object_Vendor extends QuickBooks_QBXML_Object
 	/**
 	 * Convert this object to a valid qbXML request
 	 * 
-	 * @param string $request					The type of request to convert this to (examples: VendorAddRq, VendorModRq, VendorQueryRq)
+	 * @param string $request					The type of request to convert this to (examples: CustomerAddRq, CustomerModRq, CustomerQueryRq)
 	 * @param boolean $todo_for_empty_elements	A constant, one of: QUICKBOOKS_XML_XML_COMPRESS, QUICKBOOKS_XML_XML_DROP, QUICKBOOKS_XML_XML_PRESERVE
 	 * @param string $indent
 	 * @param string $root
